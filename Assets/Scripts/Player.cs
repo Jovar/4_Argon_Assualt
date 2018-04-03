@@ -32,6 +32,15 @@ public class Player : MonoBehaviour {
         ProcessRotation();
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        print("Player collided with something");
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        print("Player triggered something");
+    }
+
     private void ProcessTranslation()
     {
         // movement of the ship's position
@@ -60,4 +69,5 @@ public class Player : MonoBehaviour {
 
         transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
     }
+
 }
